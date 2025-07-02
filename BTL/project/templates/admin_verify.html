@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác minh admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .verify-box {
+      max-width: 400px;
+      margin: 80px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .verify-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .verify-box input[type="submit"] {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .verify-box input[type="submit"]:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="verify-box">
+    <form method="post"> <!-- ✅ Đây là dòng quan trọng -->
+      <input type="password" name="password" placeholder="Nhập mật khẩu admin" required>
+      <input type="submit" value="Xác nhận">
+    </form>
+  </div>
+</body>
+</html>

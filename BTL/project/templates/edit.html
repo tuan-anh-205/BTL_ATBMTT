@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chỉnh sửa thông tin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="container">
+  <h2>Chỉnh sửa thông tin cá nhân</h2>
+  <form method="post">
+    <input type="text" name="name" value="{{ name }}" placeholder="Họ tên" required>
+    <input type="text" name="cmnd" value="{{ cmnd }}" placeholder="Số CCCD" required>
+    <input type="text" name="bhxh" value="{{ bhxh }}" placeholder="Số BHXH" required>
+    <input type="text" name="bank" value="{{ bank }}" placeholder="Số tài khoản" required>
+    <input type="submit" value="Lưu thay đổi" class="btn btn-success">
+  </form>
+  <br>
+  <a href="/dashboard" class="btn btn-secondary">Quay lại</a>
+</body>
+</html>

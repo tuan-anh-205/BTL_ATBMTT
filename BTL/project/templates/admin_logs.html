@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Log Hệ Thống</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* CSS tương tự như admin_page.html */
+    body.container {
+      background: linear-gradient(135deg, #673ab7, #9c27b0);
+      color: #333;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      min-height: 100vh;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+    .table {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+    .btn {
+      padding: 6px 14px;
+      font-size: 14px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      border: none;
+      transition: background-color 0.2s ease;
+    }
+    .btn-secondary { background-color: #6c757d; }
+    .back-button {
+        margin-top: 20px;
+        text-align: center;
+    }
+  </style>
+</head>
+<body class="container">
+  <h2>Log Hệ Thống</h2>
+  <div class="table">
+    <table>
+      <tr>
+        <th>ID Log</th>
+        <th>Người thao tác</th>
+        <th>Loại thao tác</th>
+        <th>Đối tượng tác động</th>
+        <th>Mô tả</th>
+        <th>Thời gian</th>
+        <th>IP</th>
+      </tr>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log[0] }}</td> {# log_id #}
+        <td>{{ log[2] }} (ID: {{ log[1] }})</td> {# username (user_id) #}
+        <td>{{ log[3] }}</td> {# action_type #}
+        <td>{% if log[4] %}{{ log[4] }}{% else %}N/A{% endif %}</td> {# target_user_id #}
+        <td>{{ log[5] }}</td> {# description #}
+        <td>{{ log[6] }}</td> {# timestamp #}
+        <td>{{ log[7] }}</td> {# ip_address #}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="back-button">
+    <a href="/admin" class="btn btn-secondary">Quay lại Trang Quản trị</a>
+  </div>
+</body>
+</html>

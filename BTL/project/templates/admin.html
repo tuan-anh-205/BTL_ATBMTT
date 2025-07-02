@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang quản trị</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .btn {
+      padding: 6px 12px;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      color: white;
+      border: none;
+      display: inline-block;
+    }
+    .btn-primary { background-color: #007bff; }
+    .btn-success { background-color: #28a745; }
+    .btn-warning { background-color: #ffc107; color: #212529; }
+    .btn-danger { background-color: #dc3545; }
+    .btn-secondary { background-color: #6c757d; }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+  </style>
+</head>
+<body class="container">
+  <h2>Trang quản trị</h2>
+
+  <div class="table">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Tên đăng nhập</th>
+        <th>Họ tên</th>
+        <th>Thao tác</th>
+      </tr>
+      {% for user in users %}
+      <tr>
+        <td>{{ user[0] }}</td>
+        <td>{{ user[1] }}</td>
+        <td>{{ user[3] }}</td>
+        <td class="action-buttons">
+          <a href="/admin/view/{{ user[0] }}" class="btn btn-primary">Xem</a>
+          <a href="/admin/edit/{{ user[0] }}" class="btn btn-success">Sửa</a>
+          <a href="/admin/change-password/{{ user[0] }}" class="btn btn-warning">Đổi MK</a>
+          <a href="/admin/delete/{{ user[0] }}" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa người dùng này?')">Xóa</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <br>
+  <div class="action-buttons">
+    <a href="/admin/logs" class="btn btn-secondary">Xem log</a>
+    <a href="/logout" class="btn btn-secondary">Đăng xuất</a>
+  </div>
+</body>
+</html>

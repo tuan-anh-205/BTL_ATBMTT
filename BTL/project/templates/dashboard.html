@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang cá nhân</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="container">
+  <h2>Thông tin cá nhân</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Họ tên:</strong> {{ name }}</li>
+    <li class="list-group-item"><strong>Số CCCD:</strong> {{ cmnd }}</li>
+    <li class="list-group-item"><strong>Số BHXH:</strong> {{ bhxh }}</li>
+    <li class="list-group-item"><strong>Số tài khoản:</strong> {{ bank }}</li>
+  </ul>
+  <br>
+  <a href="/edit" class="btn btn-warning">Chỉnh sửa</a>
+  <a href="/delete" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa tài khoản?')">Xóa tài khoản</a>
+  <a href="/logout" class="btn btn-secondary">Đăng xuất</a>
+</body>
+</html>

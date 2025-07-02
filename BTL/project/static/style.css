@@ -1,0 +1,94 @@
+body {
+  background: linear-gradient(to bottom right, #391295, #dfefff);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+form,
+.table,
+.list-group {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+  white-space: pre-wrap;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Nút chung */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Màu nút */
+.btn-info {
+  background-color: #3498db;
+}
+.btn-info:hover {
+  background-color: #2980b9;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+}
+.btn-success:hover {
+  background-color: #27ae60;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+}
+.btn-secondary:hover {
+  background-color: #636e72;
+}
+
+/* Căn giữa nút thao tác */
+.actions {
+  white-space: nowrap;
+  text-align: center;
+}

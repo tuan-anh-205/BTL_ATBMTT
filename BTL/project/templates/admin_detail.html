@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết người dùng</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px 20px;
+    }
+
+    .detail-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    li strong {
+      color: #2c3e50;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #7f8c8d;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #616a6b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="detail-container">
+    <h2>Thông tin chi tiết người dùng</h2>
+    <ul>
+      <li><strong>ID:</strong> {{ user.id }}</li>
+      <li><strong>Tên đăng nhập:</strong> {{ user.username }}</li>
+      <li><strong>Họ tên:</strong> {{ user.name }}</li>
+      <li><strong>Số CCCD:</strong> {{ user.cmnd }}</li>
+      <li><strong>Số BHXH:</strong> {{ user.bhxh }}</li>
+      <li><strong>Số tài khoản:</strong> {{ user.bank }}</li>
+    </ul>
+    <a href="/admin" class="btn">Quay lại danh sách</a>
+  </div>
+</body>
+</html>
